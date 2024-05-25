@@ -8,6 +8,21 @@ $-- Customize is needed, otherwise remove this partials to use Quarto default on
 $-- %%%%%%%%%%%%%%%%
 
 \documentclass[
+$if(style)$
+  $style$,
+$else$
+  Journal,
+$endif$
+$if(figsplacement)$
+  $figsplacement$,
+$else$
+  InsideFigs,
+$endif$
+$if(spacing)$
+  $spacing$,
+$else$
+  DoubleSpace,
+$endif$
 $if(fontsize)$
   $fontsize$,
 $endif$

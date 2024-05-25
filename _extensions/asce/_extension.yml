@@ -1,0 +1,22 @@
+title: ascelike-new template
+author: Hailin Wang
+version: 0.1.0
+contributes:
+  formats:
+    pdf:
+      documentclass: ascelike-new
+      biblio-style: ascelike-new
+      cite-method: natbib
+      header-includes: |
+        \usepackage{amsmath}
+        \usepackage[figurename=Fig.,labelfont=bf,labelsep=period]{caption}
+        \usepackage[colorlinks=true,citecolor=red,linkcolor=black]{hyperref}
+      template-partials:
+        - "partials/after-body.tex"
+        - "partials/before-body.tex"
+        - "partials/before-title.tex"
+        - "partials/doc-class.tex"
+        - "partials/title.tex"
+      format-resources:
+        - ascelike-new.bst
+        - ascelike-new.cls

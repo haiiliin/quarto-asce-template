@@ -1,0 +1,32 @@
+$-- Implements the frontmatter, title page, and abstract.
+$--
+$-- %%%% TODO %%%%%
+$-- Customize is needed, otherwise remove this partials to use Quarto default one
+$-- %%%%%%%%%%%%%%%%
+
+$if(title)$
+% Title
+\title{$title$}
+$endif$
+
+$for(by-author)$
+\author[$for(by-author.affiliations)$$it.number$$sep$,$endfor$$if(by-author.attributes.corresponding)$,*$endif$]{$by-author.name.literal$}
+$endfor$
+$for(by-affiliation)$
+\affil[$it.number$]{$it.name$}
+$endfor$
+
+\maketitle
+
+$if(abstract)$
+% Abstract
+\begin{abstract}
+$abstract$
+
+$if(keywords)$
+\noindent
+\textbf{Keywords:} $for(keywords)$ $it$$sep$, $endfor$
+$endif$
+
+\end{abstract}
+$endif$
